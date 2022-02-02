@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password generator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            user-select: none;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            padding-top: 150px;
+        }
+        .PG{
+          position: relative;
+          height: 450px;
+          width: 450px;
+        }
+        .PG h2{
+            font-size: 5vh;
+            color: rgb(7, 8, 8);
+        }
+        .PG input{
+            position: relative;
+            width: 100%;
+            height: 10vh;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 45px;
+        }
+        
+
+        #button{
+            display:block;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: cornsilk;
+            background-color: rgb(223, 9, 9);
+            width: 100px;
+            size: 40px ;
+            font-style: normal;
+            padding: 10px 10px;
+            border-radius: 15px;
+            text-align:center;
+            border: solid black;
+        }
+        #button:active
+        {
+            color: black;
+            background-color: rgb(167, 64, 39);
+        }
+    </style>
+</head>
+<body>
+    <div class="PG">
+        <h2>auction Pool</h2>
+        <input type="text" name=" " placeholder="Pool No." id="Password" readonly=" ">
+        <div id="button" onclick="password()">Generate</div>
+    </div>
+    <script type="text/javascript">
+    function password()
+    {
+        var char="12345678";
+        var length=1;
+        var password="";
+        for(var i=0;i<length;i++)
+        {
+            var randomNo= Math.floor(Math.random()*char.length);
+            password += char.substring(randomNo,randomNo+1);
+        }
+        document.getElementById("Password").value=password;;
+    }
+    </script>
+</body>
+</html>
